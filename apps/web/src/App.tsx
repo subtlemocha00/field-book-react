@@ -3,7 +3,7 @@ import type { HealthResponse } from '@field-book/contracts';
 
 type HealthState =
   | { kind: 'loading' }
-  | { kind: 'ok'; status: HealthResponse['status'] }
+  | { kind: 'ok'; response: HealthResponse }
   | { kind: 'error'; message: string };
 
 export function App(): JSX.Element {
@@ -15,31 +15,49 @@ export function App(): JSX.Element {
       .then(async (res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const body = (await res.json()) as HealthResponse;
-        setHealth({ kind: 'ok', status: body.status });
+        setHealth({ kind: 'ok', response: body });
       })
       .catch((err: unknown) => {
         if (controller.signal.aborted) return;
         const message = err instanceof Error ? err.message : 'unknown error';
         setHealth({ kind: 'error', message });
       });
-    return () => controller.abort();
+    return () => {
+      controller.abort();
+    };
   }, []);
 
   return (
     <main>
       <h1>Field Book App</h1>
-      <p>API status: {renderHealth(health)}</p>
+      <dl>
+        <dt>API status</dt>
+        <dd>{renderStatus(health)}</dd>
+        <dt>API phase</dt>
+        <dd>{renderPhase(health)}</dd>
+      </dl>
     </main>
   );
 }
 
-function renderHealth(state: HealthState): string {
+function renderStatus(state: HealthState): string {
   switch (state.kind) {
     case 'loading':
       return 'checking…';
     case 'ok':
-      return state.status;
+      return state.response.status;
     case 'error':
       return `error: ${state.message}`;
+  }
+}
+
+function renderPhase(state: HealthState): string {
+  switch (state.kind) {
+    case 'loading':
+      return '…';
+    case 'ok':
+      return String(state.response.phase);
+    case 'error':
+      return '—';
   }
 }

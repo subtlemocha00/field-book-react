@@ -18,7 +18,7 @@
     "typecheck": "tsc -b --noEmit"
   },
   "dependencies": {
-    "@field-book/contracts": "*"
+    "@field-book/contracts": "workspace:*"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240815.0",

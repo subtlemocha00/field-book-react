@@ -12,7 +12,17 @@
       "PowerShell(Get-CimInstance Win32_Process -Filter \"ProcessId = 3380\")",
       "Bash(curl -s http://localhost:5174/)",
       "Bash(curl -s -i http://localhost:5174/health)",
-      "Bash(grep -v '^\\\\.$')"
+      "Bash(grep -v '^\\\\.$')",
+      "Bash(./node_modules/.bin/tsc -b --force)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(pnpm install *)",
+      "Bash(npm install *)",
+      "Bash(../../node_modules/.bin/vitest run *)",
+      "Bash(./node_modules/.bin/tsc -b apps/web)",
+      "Bash(echo \"WEB: $?\")",
+      "Bash(./node_modules/.bin/tsc -b apps/api)",
+      "Bash(echo \"API: $?\")",
+      "Bash(./node_modules/.bin/tsc -b apps/api --force)"
     ]
   }
 }

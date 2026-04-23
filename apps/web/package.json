@@ -18,7 +18,7 @@
     "typecheck": "tsc -b --noEmit"
   },
   "dependencies": {
-    "@field-book/contracts": "*",
+    "@field-book/contracts": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
