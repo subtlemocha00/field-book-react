@@ -13,7 +13,11 @@ The following documents are immutable and override all prior context or default 
 * `docs/FUNCTIONAL_SPEC.md`
 * `docs/DATA_MODEL_PERSISTENCE_SPEC.md`
 * `docs/DOMAIN_RULES_SPEC.md`
-* `docs/CLAUDE.md` (this file)
+* `CLAUDE.md` (this file)
+
+Treat them as authoritative and immutable.
+
+Confirm once loaded before proceeding.
 
 ## ARCHITECTURAL HARD CONSTRAINTS
 
