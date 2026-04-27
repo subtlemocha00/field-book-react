@@ -6,8 +6,8 @@
   "scripts": {
     "build": "pnpm -r build",
     "dev": "npm-run-all --parallel dev:web dev:api",
-    "dev:web": "npm run dev --workspace @field-book/web",
-    "dev:api": "npm run dev --workspace @field-book/api",
+    "dev:web": "pnpm --filter @field-book/web dev",
+    "dev:api": "pnpm --filter @field-book/api dev",
     "lint": "eslint .",
     "format": "prettier --write .",
     "test": "pnpm -r test",
