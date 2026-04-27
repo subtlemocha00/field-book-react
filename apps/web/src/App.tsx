@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { HealthResponse } from '@field-book/contracts';
+import { Phase3Panel } from './Phase3Panel';
 
 type HealthState =
   | { kind: 'loading' }
@@ -36,6 +37,7 @@ export function App(): JSX.Element {
         <dt>API phase</dt>
         <dd>{renderPhase(health)}</dd>
       </dl>
+      <Phase3Panel />
     </main>
   );
 }

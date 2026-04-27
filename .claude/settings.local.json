@@ -22,7 +22,14 @@
       "Bash(echo \"WEB: $?\")",
       "Bash(./node_modules/.bin/tsc -b apps/api)",
       "Bash(echo \"API: $?\")",
-      "Bash(./node_modules/.bin/tsc -b apps/api --force)"
+      "Bash(./node_modules/.bin/tsc -b apps/api --force)",
+      "Bash(pnpm build *)",
+      "Read(//c/Users/Owner/Desktop/Getting Started/new/code/repos/field-book-react/.claude/apps/**)",
+      "Bash(pnpm test *)",
+      "Bash(pnpm view *)",
+      "Bash(node scripts/verify-phase3.mjs)",
+      "Bash(pnpm -r build)",
+      "Bash(git add *)"
     ]
   }
 }
