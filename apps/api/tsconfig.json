@@ -6,10 +6,17 @@
     "tsBuildInfoFile": "./dist/.tsbuildinfo",
     "types": ["@cloudflare/workers-types"],
     "lib": ["ES2022"],
-    "noEmit": false
+    "noEmit": false,
+    "paths": {
+      "@field-book/contracts": ["../../packages/contracts/src/index.ts"],
+      "@field-book/contracts/*": ["../../packages/contracts/src/*"],
+      "@field-book/domain": ["../../packages/domain/src/index.ts"],
+      "@field-book/domain/*": ["../../packages/domain/src/*"]
+    }
   },
   "include": ["src/**/*"],
   "references": [
-    { "path": "../../packages/contracts" }
+    { "path": "../../packages/contracts" },
+    { "path": "../../packages/domain" }
   ]
 }

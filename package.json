@@ -4,15 +4,16 @@
   "version": "0.0.0",
   "packageManager": "pnpm@10.33.2",
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
+    "build": "pnpm -r build",
     "dev": "npm-run-all --parallel dev:web dev:api",
     "dev:web": "npm run dev --workspace @field-book/web",
     "dev:api": "npm run dev --workspace @field-book/api",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "test": "npm run test --workspaces --if-present",
+    "test": "pnpm -r test",
     "typecheck": "tsc -b",
-    "verify:phase1": "node scripts/verify-phase1.mjs"
+    "verify:phase1": "node scripts/verify-phase1.mjs",
+    "verify:phase3": "node scripts/verify-phase3.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
