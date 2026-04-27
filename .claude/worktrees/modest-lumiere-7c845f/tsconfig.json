@@ -1,0 +1,12 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/contracts" },
+    { "path": "./packages/domain" },
+    { "path": "./packages/survey-core" },
+    { "path": "./packages/sync-core" },
+    { "path": "./packages/audit-core" },
+    { "path": "./apps/api" },
+    { "path": "./apps/web" }
+  ]
+}

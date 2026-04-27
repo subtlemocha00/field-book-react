@@ -1,0 +1,13 @@
+name = "field-book-api"
+main = "src/index.ts"
+compatibility_date = "2024-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+[dev]
+port = 8787
+
+[[d1_databases]]
+binding = "DB"
+database_name = "field-book-local"
+database_id = "local-placeholder-id"
+migrations_dir = "migrations"

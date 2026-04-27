@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(echo \"started pid=$!\")",
+      "Bash(npx wrangler *)",
+      "Bash(npx vite *)",
+      "Bash(curl -s -i http://127.0.0.1:8787/health)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://127.0.0.1:5173/)",
+      "Bash(curl -s http://127.0.0.1:5173/health)",
+      "PowerShell(netstat -ano)",
+      "PowerShell(Get-CimInstance Win32_Process -Filter \"ProcessId = 3380\")",
+      "Bash(curl -s http://localhost:5174/)",
+      "Bash(curl -s -i http://localhost:5174/health)",
+      "Bash(grep -v '^\\\\.$')",
+      "Bash(./node_modules/.bin/tsc -b --force)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(pnpm install *)",
+      "Bash(npm install *)",
+      "Bash(../../node_modules/.bin/vitest run *)",
+      "Bash(./node_modules/.bin/tsc -b apps/web)",
+      "Bash(echo \"WEB: $?\")",
+      "Bash(./node_modules/.bin/tsc -b apps/api)",
+      "Bash(echo \"API: $?\")",
+      "Bash(./node_modules/.bin/tsc -b apps/api --force)",
+      "Bash(pnpm build *)",
+      "Read(//c/Users/Owner/Desktop/Getting Started/new/code/repos/field-book-react/.claude/apps/**)",
+      "Bash(pnpm test *)",
+      "Bash(pnpm view *)",
+      "Bash(node scripts/verify-phase3.mjs)",
+      "Bash(pnpm -r build)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh pr *)",
+      "PowerShell(gh pr list --head claude/modest-lumiere-7c845f --json url,number,state)",
+      "PowerShell(@\\($env:GH_TOKEN, $env:GITHUB_TOKEN\\) | ForEach-Object { if \\($_\\) { \"set \\(length=$\\($_.Length\\)\\)\" } else { \"unset\" } })"
+    ]
+  }
+}
